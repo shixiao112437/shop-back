@@ -2,6 +2,8 @@
 
 'use strict';
 
+const params = require("../app/middleware/params");
+
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -16,7 +18,25 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1611816598532_3967';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['params'];
+
+  config.cors = {
+    origin:'http://localhost:3000',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    credentials: true,
+  };
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+    // 允许访问接口的白名单
+    domainWhiteList: [ 'http://localhost:3000' ],
+  };
+  config.mongoose = {
+    url:'mongodb://127.0.0.1/shop',
+    option:{}
+  }
 
   // add your user config here
   const userConfig = {
