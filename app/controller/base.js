@@ -3,8 +3,8 @@ const Controller = require('egg').Controller
 class BaseControle extends Controller {
     async success(data) {
         this.ctx.body = {
-            msg: 'success',
-            code: 0,
+            msg: data.msg||'success',
+            code: data.code||0,
             data
         }
     }

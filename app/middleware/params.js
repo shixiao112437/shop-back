@@ -1,4 +1,3 @@
-const { app } = require("egg-mock");
 
 module.exports = (option,app) => {
     return async function(ctx,next) {

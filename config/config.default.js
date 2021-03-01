@@ -21,7 +21,7 @@ module.exports = appInfo => {
   config.middleware = ['params'];
 
   config.cors = {
-    origin:'http://localhost:3000',
+    origin: 'http://localhost:3000',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
     credentials: true,
   };
@@ -31,12 +31,15 @@ module.exports = appInfo => {
       ignoreJSON: true,
     },
     // 允许访问接口的白名单
-    domainWhiteList: [ 'http://localhost:3000' ],
+    domainWhiteList: ['http://localhost:3000'],
   };
   config.mongoose = {
-    url:'mongodb://127.0.0.1/shop',
-    option:{}
-  }
+    url: 'mongodb://127.0.0.1/shop',
+    option: {}
+  },
+    config.jwt = {
+      secret: "1124371411"
+    }
 
   // add your user config here
   const userConfig = {
