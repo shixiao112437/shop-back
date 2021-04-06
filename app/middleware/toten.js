@@ -7,7 +7,8 @@ module.exports = options => {
         try {
           // 解码token
           decode = ctx.app.jwt.verify(token, options.secret);
-          console.log(decode,'1111111111111111111111111111111111')
+          console.log(decode,'1111111111111111111111111111111111decode')
+          ctx.decode = decode
           await next();
           console.log(decode);
         } catch (error) {
