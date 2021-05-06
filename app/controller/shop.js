@@ -11,5 +11,15 @@ class ShopControle extends BaseControle{
                 this.error(error)
             }
     }
+    // 
+    async getCatGoods(){
+        const {ctx} = this
+
+        let {cid,page,pageSize} = ctx.request.query
+        console.log(ctx.request.query,'AAAAAAAAAA')
+        let res =await ctx.service.shop.getCatGoods({cid,page,pageSize})
+        this.success(res)
+       
+    }
 }
 module.exports = ShopControle
