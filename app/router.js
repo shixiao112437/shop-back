@@ -16,6 +16,7 @@ module.exports = app => {
   router.get('/verific', controller.auth.getVerific); // 获取轮播图
   router.post('/checkVerific', controller.auth.checkVerific); // 获取轮播图
   router.get('/goods/search', controller.shop.getCatGoods); // 获取轮播图
+  router.get('/test', controller.home.index); // 获取轮播图
   
 
 
